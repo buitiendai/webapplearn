@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Account</title>
+</head>
+<body>
+    <script>
+        function validateAccount(str) {
+            let regexp = /^[_a-z0-9]{6,}$/
+            if(regexp.test(str)) {
+                return true;
+            }
+            return false;
+        }
+        //Mẫu tài khoản hợp lệ
+        let account = validateAccount('123abc_');
+        console.log(account);
+        account = validateAccount('_abc123');
+        console.log(account);
+        account = validateAccount('______');
+        console.log(account);
+        account = validateAccount(135246);
+        console.log(account);
+        account = validateAccount('abcdefgh');
+        console.log(account);
+        //Mẫu tài khoản không hợp lệ
+        account = validateAccount('..@');
+        console.log(account);
+        account = validateAccount(12356);
+        console.log(account);
+        account = validateAccount('1234_');
+        console.log(account);
+    </script>
+</body>
+</html>
